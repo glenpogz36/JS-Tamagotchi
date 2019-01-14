@@ -1,5 +1,5 @@
 {
-  "name": "Template",
+  "name": "tamagotchi",
   "version": "1.0.0",
   "description": "template NPM setup with karma/jasmine",
   "main": "index.js",

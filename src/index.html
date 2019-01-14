@@ -1,1 +1,26 @@
-PLACEHOLDER
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+    <title>Tamagotchi</title>
+  </head>
+  <body>
+    <div class="container">
+       <div class="row">
+         <div class="col-md-6">
+           <button id="play" type="button" class="btn btn-primary">Play</button>
+           <hr>
+           <button id="sleep" type="button" class="btn btn-secondary">Sleep</button>
+           <hr>
+           <button id="feed" type="button" class="btn btn-success">Feed</button>
+           <hr>
+         </div>
+         <ol>
+           <p id="progress" role="progressbar" aria-valuein="0" aria-valuenow="50" aria-valuemax="50">Progress:</p>
+           <p id="food-progress" role="progressbar" aria-valuein="0" aria-valuenow="50" aria-valuemax="50">Food meter:</p>
+           <p id="fun-progress" role="progressbar"aria-valuemin="0" aria-valuenow="50" aria-valuemax="50">Fun meter:</p>
+           <p id="sleep-progress" role="progressbar" aria-valuemin="0" aria-valuenow="50" aria-valuemax="50">Sleep meter:</p>
+           <p id="score"></p>
+         </ol>
+  </body>
+</html>
