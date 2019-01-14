@@ -1,40 +1,41 @@
-export let tamagotchi = {
-  funLevel: 100,
-  sleepLevel: 100,
-  foodLevel: 100,
+export class tamagotchi  {
+  constructor (fun=100, sleep=100, food=100){
+  this.funLevel = fun,
+  this.sleepLevel = sleep,
+  this.foodLevel = food,
 
 
-  setHunger: function() {
+  setHunger()
     const foodInterval = setInterval(() => {
       this.foodLevel--;
-      if (this.didYouGetEaten() == true) {
+      if (this.foodLevel > 0) {
         clearInterval(foodInterval);
         return "Died from hunger!";
       }
     }, 65);
-  },
 
-  setSleep: function() {
+
+  setSleep()
     const sleepInterval = setInterval(() => {
       this.foodLevel--;
-      if (this.didYoudiefromsleep() == true) {
+      if (this.sleepLevel >0) {
         clearInterval(sleepInterval);
         return "Died from lack of sleep!";
       }
     }, 65);
-  },
 
-  setFun: function() {
+
+  setFun()
     const funInterval = setInterval(() => {
       this.foodLevel--;
-      if (this.didYouCommitsuicide() == true) {
+      if (this.funLevel> 0) {
         clearInterval(funInterval);
         return "Died from boredness!";
       }
     }, 65);
-  },
 
-  dyingPet: function() {
+
+  dyingPet()
     if (this.funLevel > 0) {
       return false;
     } else if(this.sleepLevel > 0) {
@@ -44,8 +45,8 @@ export let tamagotchi = {
     } else {
       return true;
     }
-  },
-  interact: function(amount) {
+
+  interact(amount) {
     let that = this;
     return function(play) {
       that.funLevel += amount;
@@ -54,8 +55,9 @@ export let tamagotchi = {
   },
 
 };
+};
 
 tamagotchi.interact = tamagotchi.interact(7);
-tamagotchi.sleep = tamagotchi.sleep(7);
-tamagotchi.feed = tamagotchi.feed(7);
-tamagotchi.fun = tamagotchi.fun(7);
+tamagotchi.sleep = tamagotchi.interact(7);
+tamagotchi.feed = tamagotchi.interact(7);
+tamagotchi.fun = tamagotchi.interact(7);
