@@ -3,15 +3,26 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import $ from 'jquery';
 import { tamagotchi } from './../src/tamagotchi.js';
+import pet from './img/tamagotchi.gif'
+import play from './img/play.gif'
+import rest from './img/sleep.gif'
+import eat from './img/eat.gif'
 
-let funLevelBar = tamagotchi.setFun() ;
-let sleepLevelBar = tamagotchi.setSleep();
-let foodLevelBar = tamagotchi.setHunger();
+
+let fun = funLevelBar;
+let sleep = sleepLevelBar;
+let food = foodLevelBar;
+
+
+let funLevelBar = tamagotchi.setFun(fun) ;
+let sleepLevelBar = tamagotchi.setSleep(sleep);
+let foodLevelBar = tamagotchi.setHunger(food);
 
 $(function(){
+      $('img#tamagotchi').attr('src', pet);
   funLevelBar = parseFloat($(".progress-bar").css("width")) + 1;
   sleepLevelBar = parseFloat($(".progress-bar").css("width")) + 1;
-  foodLevelBar = parseFloat($(".progress-bar").css("width")) + 1;
+  foodLevelBar = parseFloat($(".food-progress").css("width")) + 1;
   setInterval(function() {
     $("#fun-progress").text(tamagotchi.funLevel);
     $("#fun-progress").css("width", tamagotchi.funLevel);
@@ -46,6 +57,7 @@ $(function(){
 $(document).ready(function() {
   var count = 0
   $('#play').click(function(){
+      $('img#tamagotchi').attr('src', play);
     count++;
     tamagotchi.interact("play");
     $("#fun-progress").text(tamagotchi.funLevel);
@@ -54,6 +66,7 @@ $(document).ready(function() {
 
   $('#sleep').click(function() {
     count++;
+          $('img#tamagotchi').attr('src', rest);
     tamagotchi.sleep("sleep");
     $("#sleep-progress").text(tamagotchi.sleepLevel);
     $("#score").html("Your score is: "+ count);
@@ -62,6 +75,7 @@ $(document).ready(function() {
 
   $('#feed').click(function(){
     count++;
+          $('img#tamagotchi').attr('src', eat);
     tamagotchi.feed("feed");
     $("#food-progress").text(tamagotchi.foodLevel);
     $("#score").html("Your score is: "+ count);

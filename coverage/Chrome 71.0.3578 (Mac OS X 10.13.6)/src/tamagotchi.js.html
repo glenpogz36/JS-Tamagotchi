@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/tamagotchi.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> tamagotchi.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">30.77% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>8/26</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">4% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>1/25</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">27.27% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>1/1</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span></td><td class="text"><pre class="prettyprint lang-js">!function(Q){var n={};function t(F){<span class="missing-if-branch" title="if path not taken" >I</span>if(n[F])<span class="cstat-no" title="statement not covered" >return n[F].exports;v</span>ar e=n[F]={i:F,l:!1,exports:{}};return Q[F].call(e.exports,e,e.exports,t),e.l=!0,e.exports}t.m=Q,t.c=n,t.d=<span class="fstat-no" title="function not covered" >function(Q,n,F){<span class="cstat-no" title="statement not covered" ></span>t.o(Q,n)||Object.defineProperty(Q,n,{enumerable:!0,get:F})}</span>,t.r=<span class="fstat-no" title="function not covered" >function(Q){<span class="cstat-no" title="statement not covered" ></span>"undefined"!=typeof Symbol&amp;&amp;Symbol.toStringTag&amp;&amp;Object.defineProperty(Q,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(Q,"__esModule",{value:!0})}</span>,t.t=<span class="fstat-no" title="function not covered" >function(Q,n){<span class="cstat-no" title="statement not covered" ></span>if(1&amp;n&amp;&amp;(Q=t(Q)),8&amp;n)<span class="cstat-no" title="statement not covered" >return Q;<span class="cstat-no" title="statement not covered" >i</span></span>f(4&amp;n&amp;&amp;"object"==typeof Q&amp;&amp;Q&amp;&amp;Q.__esModule)<span class="cstat-no" title="statement not covered" >return Q;<span class="cstat-no" title="statement not covered" >v</span></span>ar F=Object.create(null);<span class="cstat-no" title="statement not covered" >i</span>f(t.r(F),Object.defineProperty(F,"default",{enumerable:!0,value:Q}),2&amp;n&amp;&amp;"string"!=typeof Q)<span class="cstat-no" title="statement not covered" >for(var e in Q)<span class="cstat-no" title="statement not covered" >t.d(F,e,<span class="fstat-no" title="function not covered" >function(n){<span class="cstat-no" title="statement not covered" ></span>return Q[n]}</span>.bind(null,e));<span class="cstat-no" title="statement not covered" >r</span></span></span>eturn F}</span>,t.n=<span class="fstat-no" title="function not covered" >function(Q){<span class="cstat-no" title="statement not covered" ></span>var n=Q&amp;&amp;Q.__esModule?<span class="fstat-no" title="function not covered" >function(){<span class="cstat-no" title="statement not covered" ></span>return Q.default}</span>:<span class="fstat-no" title="function not covered" >function(){<span class="cstat-no" title="statement not covered" ></span>return Q}</span>;<span class="cstat-no" title="statement not covered" >r</span>eturn t.d(n,"a",n),n}</span>,t.o=<span class="fstat-no" title="function not covered" >function(Q,n){<span class="cstat-no" title="statement not covered" ></span>return Object.prototype.hasOwnProperty.call(Q,n)}</span>,t.p="/var/folders/zz/zyxvpxvq6csfxvn_n00000s4000069/T/_karma_webpack_/",t(t.s=12)}({12:function(module,exports,__webpack_require__){"use strict";eval('\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\nvar tamagotchi = exports.tamagotchi = {\n  funLevel: 100,\n  sleepLevel: 100,\n  foodLevel: 100,\n\n  setFun: function setFun() {\n    var _this = this;\n\n    var funInterval = setInterval(function () {\n      _this.funLevel--;\n      if (_this.didYouGetBored() == true) {\n        clearInterval(funInterval);\n      }\n    }, 75);\n  },\n  setSleep: function setSleep() {\n    var _this2 = this;\n\n    var sleepInterval = setInterval(function () {\n      _this2.sleepLevel--;\n      if (_this2.didYouDiefromsleep() == true) {\n        clearInterval(sleepInterval);\n      }\n    }, 100);\n  },\n  setHunger: function setHunger() {\n    var _this3 = this;\n\n    var foodInterval = setInterval(function () {\n      _this3.foodLevel--;\n      if (_this3.didYouStarve() == true) {\n        clearInterval(foodInterval);\n      }\n    }, 120);\n  },\n  dyingtamagotchi: function dyingtamagotchi() {\n    if (this.funLevel &gt; 0) {\n      return false;\n    } else if (this.sleepLevel &gt; 0) {\n      return false;\n    } else if (this.foodLevel &gt; 0) {\n      return false;\n    } else {\n      return true;\n    }\n  },\n  interact: function interact(amount) {\n    var that = this;\n    return function (play) {\n      that.funLevel += amount;\n      return play, amount;\n    };\n  },\n  sleep: function sleep(amount) {\n    var that = this;\n    return function (sleep) {\n      that.sleepLevel += amount;\n      return sleep, amount;\n    };\n  },\n  feed: function feed(amount) {\n    var that = this;\n    return function (feed) {\n      that.foodLevel += amount;\n      return feed, amount;\n    };\n  }\n};\n\ntamagotchi.interact = tamagotchi.interact(7);\ntamagotchi.sleep = tamagotchi.sleep(7);\ntamagotchi.feed = tamagotchi.feed(7);//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvdGFtYWdvdGNoaS5qcz80ODgwIl0sIm5hbWVzIjpbInRhbWFnb3RjaGkiLCJmdW5MZXZlbCIsInNsZWVwTGV2ZWwiLCJmb29kTGV2ZWwiLCJzZXRGdW4iLCJmdW5JbnRlcnZhbCIsInNldEludGVydmFsIiwiZGlkWW91R2V0Qm9yZWQiLCJjbGVhckludGVydmFsIiwic2V0U2xlZXAiLCJzbGVlcEludGVydmFsIiwiZGlkWW91RGllZnJvbXNsZWVwIiwic2V0SHVuZ2VyIiwiZm9vZEludGVydmFsIiwiZGlkWW91U3RhcnZlIiwiZHlpbmd0YW1hZ290Y2hpIiwiaW50ZXJhY3QiLCJhbW91bnQiLCJ0aGF0IiwicGxheSIsInNsZWVwIiwiZmVlZCJdLCJtYXBwaW5ncyI6Ijs7Ozs7QUFBTyxJQUFJQSxrQ0FBYTtBQUN0QkMsWUFBVSxHQURZO0FBRXRCQyxjQUFZLEdBRlU7QUFHdEJDLGFBQVcsR0FIVzs7QUFLdEJDLFVBQVEsa0JBQVc7QUFBQTs7QUFDakIsUUFBTUMsY0FBY0MsWUFBWSxZQUFNO0FBQ3BDLFlBQUtMLFFBQUw7QUFDQSxVQUFJLE1BQUtNLGNBQUwsTUFBeUIsSUFBN0IsRUFBbUM7QUFDakNDLHNCQUFjSCxXQUFkO0FBQ0Q7QUFDRixLQUxtQixFQUtqQixFQUxpQixDQUFwQjtBQU1ELEdBWnFCO0FBYXRCSSxZQUFVLG9CQUFXO0FBQUE7O0FBQ25CLFFBQU1DLGdCQUFnQkosWUFBWSxZQUFNO0FBQ3RDLGFBQUtKLFVBQUw7QUFDQSxVQUFJLE9BQUtTLGtCQUFMLE1BQTZCLElBQWpDLEVBQXVDO0FBQ3JDSCxzQkFBY0UsYUFBZDtBQUNEO0FBQ0YsS0FMcUIsRUFLbkIsR0FMbUIsQ0FBdEI7QUFNRCxHQXBCcUI7QUFxQnRCRSxhQUFXLHFCQUFXO0FBQUE7O0FBQ3BCLFFBQU1DLGVBQWVQLFlBQVksWUFBTTtBQUNyQyxhQUFLSCxTQUFMO0FBQ0EsVUFBSSxPQUFLVyxZQUFMLE1BQXVCLElBQTNCLEVBQWlDO0FBQy9CTixzQkFBY0ssWUFBZDtBQUNEO0FBQ0YsS0FMb0IsRUFLbEIsR0FMa0IsQ0FBckI7QUFNRCxHQTVCcUI7QUE2QnRCRSxtQkFBaUIsMkJBQVc7QUFDMUIsUUFBSSxLQUFLZCxRQUFMLEdBQWdCLENBQXBCLEVBQXVCO0FBQ3JCLGFBQU8sS0FBUDtBQUNELEtBRkQsTUFFTyxJQUFHLEtBQUtDLFVBQUwsR0FBa0IsQ0FBckIsRUFBd0I7QUFDN0IsYUFBTyxLQUFQO0FBQ0QsS0FGTSxNQUVBLElBQUksS0FBS0MsU0FBTCxHQUFpQixDQUFyQixFQUF3QjtBQUM3QixhQUFPLEtBQVA7QUFDRCxLQUZNLE1BRUE7QUFDTCxhQUFPLElBQVA7QUFDRDtBQUNGLEdBdkNxQjtBQXdDdEJhLFlBQVUsa0JBQVNDLE1BQVQsRUFBaUI7QUFDekIsUUFBSUMsT0FBTyxJQUFYO0FBQ0EsV0FBTyxVQUFTQyxJQUFULEVBQWU7QUFDcEJELFdBQUtqQixRQUFMLElBQWlCZ0IsTUFBakI7QUFDQSxhQUFRRSxNQUFNRixNQUFkO0FBQ0QsS0FIRDtBQUlELEdBOUNxQjtBQStDdEJHLFNBQU8sZUFBU0gsTUFBVCxFQUFpQjtBQUN0QixRQUFJQyxPQUFPLElBQVg7QUFDQSxXQUFPLFVBQVNFLEtBQVQsRUFBZ0I7QUFDckJGLFdBQUtoQixVQUFMLElBQW1CZSxNQUFuQjtBQUNBLGFBQVFHLE9BQU9ILE1BQWY7QUFDRCxLQUhEO0FBSUQsR0FyRHFCO0FBc0R0QkksUUFBTSxjQUFTSixNQUFULEVBQWlCO0FBQ3JCLFFBQUlDLE9BQU8sSUFBWDtBQUNBLFdBQU8sVUFBU0csSUFBVCxFQUFlO0FBQ3BCSCxXQUFLZixTQUFMLElBQWtCYyxNQUFsQjtBQUNBLGFBQVFJLE1BQU1KLE1BQWQ7QUFDRCxLQUhEO0FBSUQ7QUE1RHFCLENBQWpCOztBQStEUGpCLFdBQVdnQixRQUFYLEdBQXNCaEIsV0FBV2dCLFFBQVgsQ0FBb0IsQ0FBcEIsQ0FBdEI7QUFDQWhCLFdBQVdvQixLQUFYLEdBQW1CcEIsV0FBV29CLEtBQVgsQ0FBaUIsQ0FBakIsQ0FBbkI7QUFDQXBCLFdBQVdxQixJQUFYLEdBQWtCckIsV0FBV3FCLElBQVgsQ0FBZ0IsQ0FBaEIsQ0FBbEIiLCJmaWxlIjoiMTIuanMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgbGV0IHRhbWFnb3RjaGkgPSB7XG4gIGZ1bkxldmVsOiAxMDAsXG4gIHNsZWVwTGV2ZWw6IDEwMCxcbiAgZm9vZExldmVsOiAxMDAsXG5cbiAgc2V0RnVuOiBmdW5jdGlvbigpIHtcbiAgICBjb25zdCBmdW5JbnRlcnZhbCA9IHNldEludGVydmFsKCgpID0+IHtcbiAgICAgIHRoaXMuZnVuTGV2ZWwtLTtcbiAgICAgIGlmICh0aGlzLmRpZFlvdUdldEJvcmVkKCkgPT0gdHJ1ZSkge1xuICAgICAgICBjbGVhckludGVydmFsKGZ1bkludGVydmFsKTtcbiAgICAgIH1cbiAgICB9LCA3NSk7XG4gIH0sXG4gIHNldFNsZWVwOiBmdW5jdGlvbigpIHtcbiAgICBjb25zdCBzbGVlcEludGVydmFsID0gc2V0SW50ZXJ2YWwoKCkgPT4ge1xuICAgICAgdGhpcy5zbGVlcExldmVsLS07XG4gICAgICBpZiAodGhpcy5kaWRZb3VEaWVmcm9tc2xlZXAoKSA9PSB0cnVlKSB7XG4gICAgICAgIGNsZWFySW50ZXJ2YWwoc2xlZXBJbnRlcnZhbCk7XG4gICAgICB9XG4gICAgfSwgMTAwKTtcbiAgfSxcbiAgc2V0SHVuZ2VyOiBmdW5jdGlvbigpIHtcbiAgICBjb25zdCBmb29kSW50ZXJ2YWwgPSBzZXRJbnRlcnZhbCgoKSA9PiB7XG4gICAgICB0aGlzLmZvb2RMZXZlbC0tO1xuICAgICAgaWYgKHRoaXMuZGlkWW91U3RhcnZlKCkgPT0gdHJ1ZSkge1xuICAgICAgICBjbGVhckludGVydmFsKGZvb2RJbnRlcnZhbCk7XG4gICAgICB9XG4gICAgfSwgMTIwKTtcbiAgfSxcbiAgZHlpbmd0YW1hZ290Y2hpOiBmdW5jdGlvbigpIHtcbiAgICBpZiAodGhpcy5mdW5MZXZlbCA+IDApIHtcbiAgICAgIHJldHVybiBmYWxzZTtcbiAgICB9IGVsc2UgaWYodGhpcy5zbGVlcExldmVsID4gMCkge1xuICAgICAgcmV0dXJuIGZhbHNlO1xuICAgIH0gZWxzZSBpZiAodGhpcy5mb29kTGV2ZWwgPiAwKSB7XG4gICAgICByZXR1cm4gZmFsc2U7XG4gICAgfSBlbHNlIHtcbiAgICAgIHJldHVybiB0cnVlO1xuICAgIH1cbiAgfSxcbiAgaW50ZXJhY3Q6IGZ1bmN0aW9uKGFtb3VudCkge1xuICAgIGxldCB0aGF0ID0gdGhpcztcbiAgICByZXR1cm4gZnVuY3Rpb24ocGxheSkge1xuICAgICAgdGhhdC5mdW5MZXZlbCArPSBhbW91bnQ7XG4gICAgICByZXR1cm4gKHBsYXksIGFtb3VudCk7XG4gICAgfVxuICB9LFxuICBzbGVlcDogZnVuY3Rpb24oYW1vdW50KSB7XG4gICAgbGV0IHRoYXQgPSB0aGlzO1xuICAgIHJldHVybiBmdW5jdGlvbihzbGVlcCkge1xuICAgICAgdGhhdC5zbGVlcExldmVsICs9IGFtb3VudDtcbiAgICAgIHJldHVybiAoc2xlZXAsIGFtb3VudCk7XG4gICAgfVxuICB9LFxuICBmZWVkOiBmdW5jdGlvbihhbW91bnQpIHtcbiAgICBsZXQgdGhhdCA9IHRoaXM7XG4gICAgcmV0dXJuIGZ1bmN0aW9uKGZlZWQpIHtcbiAgICAgIHRoYXQuZm9vZExldmVsICs9IGFtb3VudDtcbiAgICAgIHJldHVybiAoZmVlZCwgYW1vdW50KTtcbiAgICB9XG4gIH1cbn07XG5cbnRhbWFnb3RjaGkuaW50ZXJhY3QgPSB0YW1hZ290Y2hpLmludGVyYWN0KDcpO1xudGFtYWdvdGNoaS5zbGVlcCA9IHRhbWFnb3RjaGkuc2xlZXAoNyk7XG50YW1hZ290Y2hpLmZlZWQgPSB0YW1hZ290Y2hpLmZlZWQoNyk7XG4iXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///12\n')}});</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jan 15 2019 11:21:24 GMT-0800 (PST)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

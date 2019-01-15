@@ -6,29 +6,26 @@ export let tamagotchi = {
   setFun: function() {
     const funInterval = setInterval(() => {
       this.funLevel--;
-      if (this.didYouGetEaten() == true) {
+      if (this.didYouGetBored() == true) {
         clearInterval(funInterval);
-        return "You got eaten!";
       }
-    }, 65);
+    }, 75);
   },
   setSleep: function() {
     const sleepInterval = setInterval(() => {
       this.sleepLevel--;
-      if (this.didYouGetEaten() == true) {
+      if (this.didYouDiefromsleep() == true) {
         clearInterval(sleepInterval);
-        return "You got eaten!";
       }
-    }, 65);
+    }, 100);
   },
   setHunger: function() {
     const foodInterval = setInterval(() => {
       this.foodLevel--;
-      if (this.didYouGetEaten() == true) {
+      if (this.didYouStarve() == true) {
         clearInterval(foodInterval);
-        return "You got eaten!";
       }
-    }, 65);
+    }, 120);
   },
   dyingtamagotchi: function() {
     if (this.funLevel > 0) {
@@ -45,21 +42,21 @@ export let tamagotchi = {
     let that = this;
     return function(play) {
       that.funLevel += amount;
-      return `The tamagotchi ate the ${play}! Food level goes up ${amount}!`;
+      return (play, amount);
     }
   },
   sleep: function(amount) {
     let that = this;
     return function(sleep) {
       that.sleepLevel += amount;
-      return `The tamagotchi ate the ${sleep}! Food level goes up ${amount}!`;
+      return (sleep, amount);
     }
   },
   feed: function(amount) {
     let that = this;
     return function(feed) {
       that.foodLevel += amount;
-      return `The tamagotchi ate the ${feed}! Food level goes up ${amount}!`;
+      return (feed, amount);
     }
   }
 };
