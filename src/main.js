@@ -7,6 +7,7 @@ import pet from './img/tamagotchi.gif'
 import play from './img/play.gif'
 import rest from './img/sleep.gif'
 import eat from './img/eat.gif'
+import dead from './img/dead.gif'
 
 
 let fun = funLevelBar;
@@ -20,6 +21,7 @@ let foodLevelBar = tamagotchi.setHunger(food);
 
 $(function(){
       $('img#tamagotchi').attr('src', pet);
+        $('img#die').attr('src', dead);
   funLevelBar = parseFloat($(".progress-bar").css("width")) + 1;
   sleepLevelBar = parseFloat($(".progress-bar").css("width")) + 1;
   foodLevelBar = parseFloat($(".food-progress").css("width")) + 1;
