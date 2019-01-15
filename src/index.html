@@ -6,21 +6,65 @@
   </head>
   <body>
     <div class="container">
-       <div class="row">
-         <div class="col-md-6">
-           <button id="play" type="button" class="btn btn-primary">Play</button>
-           <hr>
-           <button id="sleep" type="button" class="btn btn-secondary">Sleep</button>
-           <hr>
-           <button id="feed" type="button" class="btn btn-success">Feed</button>
-           <hr>
-         </div>
-         <ol>
-           <p id="progress" role="progressbar" aria-valuein="0" aria-valuenow="50" aria-valuemax="50">Progress:</p>
-           <p id="food-progress" role="progressbar" aria-valuein="0" aria-valuenow="50" aria-valuemax="50">Food meter:</p>
-           <p id="fun-progress" role="progressbar"aria-valuemin="0" aria-valuenow="50" aria-valuemax="50">Fun meter:</p>
-           <p id="sleep-progress" role="progressbar" aria-valuemin="0" aria-valuenow="50" aria-valuemax="50">Sleep meter:</p>
-           <p id="score"></p>
-         </ol>
+    <div class="jumbotron">
+      <center>
+        <h1>Go Go My Tamagotchi!</h1>
+      </center>
+    </div>
+    <div id="game">
+      <h1>Goal: Keep Your tamagotchi Alive!</h1>
+      <hr>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <button id="play" type="button" class="btn btn-primary">Play</button>
+            <hr>
+            <button id="sleep" type="button" class="btn btn-secondary">Sleep</button>
+            <hr>
+            <button id="feed" type="button" class="btn btn-success">Feed</button>
+            <hr>
+          </div>
+
+          <div class="col-md-6">
+            <h2>Fun Meter</h2>
+            <div class="progress">
+              <div id="fun-progress">
+                <div class="progress-bar"  role="progressbar" style="width: 100%" aria-valuenow="10" aria-valuemin="0"
+                aria-valuemax="50"></div>
+              </div>
+            </div>
+            <hr>
+            <h2>Sleep Meter</h2>
+            <div class="progress">
+              <div id="sleep-progress">
+                <div class="progress-bar"  role="progressbar" style="width: 100%;" aria-valuenow="10" aria-valuemin="0"
+                aria-valuemax="50"></div>
+              </div>
+            </div>
+            <hr>
+            <h2>Food Meter</h2>
+            <div class="progress">
+              <div id="food-progress">
+                <div class="progress-bar"  role="progressbar" style="width: 100%;" aria-valuenow="10" aria-valuemin="0"
+                aria-valuemax="50"></div>
+              </div>
+            </div>
+            <hr>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="death">
+    <h2>Your tamagotchi Died!</h2>
+      <button class="btn btn-info"><a href="/">Try again!</a></button>
+    </p>
+    <h2 id="score"></h2>
+
+
+  </div>
+</div>
   </body>
 </html>

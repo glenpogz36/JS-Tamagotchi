@@ -1,41 +1,36 @@
-export class tamagotchi  {
-  constructor (fun=100, sleep=100, food=100){
-  this.funLevel = fun,
-  this.sleepLevel = sleep,
-  this.foodLevel = food,
+export let tamagotchi = {
+  funLevel: 100,
+  sleepLevel: 100,
+  foodLevel: 100,
 
-
-  setHunger()
+  setFun: function() {
+    const funInterval = setInterval(() => {
+      this.funLevel--;
+      if (this.didYouGetEaten() == true) {
+        clearInterval(funInterval);
+        return "You got eaten!";
+      }
+    }, 65);
+  },
+  setSleep: function() {
+    const sleepInterval = setInterval(() => {
+      this.sleepLevel--;
+      if (this.didYouGetEaten() == true) {
+        clearInterval(sleepInterval);
+        return "You got eaten!";
+      }
+    }, 65);
+  },
+  setHunger: function() {
     const foodInterval = setInterval(() => {
       this.foodLevel--;
-      if (this.foodLevel > 0) {
+      if (this.didYouGetEaten() == true) {
         clearInterval(foodInterval);
-        return "Died from hunger!";
+        return "You got eaten!";
       }
     }, 65);
-
-
-  setSleep()
-    const sleepInterval = setInterval(() => {
-      this.foodLevel--;
-      if (this.sleepLevel >0) {
-        clearInterval(sleepInterval);
-        return "Died from lack of sleep!";
-      }
-    }, 65);
-
-
-  setFun()
-    const funInterval = setInterval(() => {
-      this.foodLevel--;
-      if (this.funLevel> 0) {
-        clearInterval(funInterval);
-        return "Died from boredness!";
-      }
-    }, 65);
-
-
-  dyingPet()
+  },
+  dyingtamagotchi: function() {
     if (this.funLevel > 0) {
       return false;
     } else if(this.sleepLevel > 0) {
@@ -45,19 +40,30 @@ export class tamagotchi  {
     } else {
       return true;
     }
-
-  interact(amount) {
+  },
+  interact: function(amount) {
     let that = this;
     return function(play) {
       that.funLevel += amount;
       return `The tamagotchi ate the ${play}! Food level goes up ${amount}!`;
     }
   },
-
-};
+  sleep: function(amount) {
+    let that = this;
+    return function(sleep) {
+      that.sleepLevel += amount;
+      return `The tamagotchi ate the ${sleep}! Food level goes up ${amount}!`;
+    }
+  },
+  feed: function(amount) {
+    let that = this;
+    return function(feed) {
+      that.foodLevel += amount;
+      return `The tamagotchi ate the ${feed}! Food level goes up ${amount}!`;
+    }
+  }
 };
 
 tamagotchi.interact = tamagotchi.interact(7);
-tamagotchi.sleep = tamagotchi.interact(7);
-tamagotchi.feed = tamagotchi.interact(7);
-tamagotchi.fun = tamagotchi.interact(7);
+tamagotchi.sleep = tamagotchi.sleep(7);
+tamagotchi.feed = tamagotchi.feed(7);
